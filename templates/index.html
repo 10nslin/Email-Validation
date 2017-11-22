@@ -1,0 +1,30 @@
+<html>
+    <head>
+      <title>Email Validation With MYSQL</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      
+    </head>
+    <body>
+        <div class="pb-3 mt-5 container text-center ">
+            <h1 class="mb-3 mr-4">Enter a Valid Email!</h1>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                        <p class="p-3 mb-2 bg-danger text-white">{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <form action='/process' method='POST'>
+                <div class="col-lg-6 container text-center">
+                        <div class="input-group pr-10">
+                          <input type="text" name="email" class="form-control pr-4" placeholder="Enter Email" aria-label="Search For...">
+                          <span class="input-group-btn">
+                          <input class="btn btn-secondary" type='submit' value='Submit'>
+                         
+                          </span>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </body>
+ </html>

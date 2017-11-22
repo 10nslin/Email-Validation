@@ -1,0 +1,32 @@
+<html>
+    <head>
+      <title>Email Validation With MYSQL</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    </head>
+    <body>
+      <h1 class="p-3 mb-2 bg-success text-white container text-center">Email Entered is A Valid Email. Thank You</h1>
+
+            <table class="table container text-center">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Email</th>
+                        <th scope="col">Time added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for email in all_emails: %}
+                    <tr>
+                        <th scope="row">{{ email['email'] }} </th>
+                        <td>{{email['created_at']}}</td>
+                    </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        <form action = '/' class='text-center'> 
+            <input type='submit' value='Add More' class='btn btn-success'>
+        </form>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
